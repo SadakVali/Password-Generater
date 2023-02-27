@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <!-- Heading -->
+            <h2 class="heading">Password Generator</h2>
+
+            <!-- Display Generated Password -->
+            <div class="container-output-wrapper">
+                <span class="tooltip" password-copied-alert></span>
+                <div class="container-output">
+                    <input readonly type="text" class="display-password" placeholder="  PASSWORD..." display-password>
+                    <button class="copy-to-clip-pic-btn">
+                        <img id="copy-to-clip-pic" src="./assets/copy.svg" alt="copy" width="23px" height="23px">
+                    </button>
+                </div>
+            </div>
+
+            <div class="container-input-wrapper">
+
+                <!-- Choose The Password Length -->
+                <div class="container-input">
+                    <div class="single-line">
+                        <pre class="password-length-label">Password Length : </pre>
+                        <p password-length></p>
+                    </div>
+                    <input type="range" class="slider" min="1" max="20" step="1" pass-len-slider>
+                </div>
+    
+                <!-- Choose The Complexity of The Password -->
+                <div class="password-complexity">
+                    <div class="uppercase-checkbox checkbox-div">
+                        <input type="checkbox" id="upper-case" checked>
+                        <label for="upper-case">Include Uppercase Letters</label>
+                    </div>
+                    <div class="lowercase-checkbox checkbox-div">
+                        <input type="checkbox" id="lower-case">
+                        <label for="lower-case">Include Lowercase Letters</label>
+                    </div>
+                    <div class="numbers-checkbox checkbox-div">
+                        <input type="checkbox" id="numbers">
+                        <label for="numbers">Include Numerical Values</label>
+                    </div>
+                    <div class="symbols-checkbox checkbox-div">
+                        <input type="checkbox" id="symbols">
+                        <label for="symbols">Include Symbols</label>
+                    </div>
+                </div>
+    
+                <!-- Display The Strength of the Generated Password -->
+                <div class="password-strength">
+                    <h3>Strength</h3>
+                    <div password-strength></div>
+                </div>
+    
+                <!-- Button To Generate Password -->
+                <button class="generate-password">Generate Password</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
